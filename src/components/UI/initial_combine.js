@@ -1,13 +1,16 @@
 import React from 'react'
 import Navbar from './navbar';
 import Medianav from './medianav';
+import About from './about';
+import Tolearn from './tolearn';
 
 function Initial_combine() {
     return (
         <div>
             <Navbar />
             <Medianav />
-            <div>about</div>
+            <About />
+            <Tolearn />
         </div>
     )
 }

@@ -13,6 +13,16 @@ function Navbar() {
                  Playground
              </h1>
             </div>
+            <div className="nav_list">
+                <div className="nav_list_outs">
+                 <div className="nav_list_outs_data">
+                    <ul>
+                        <li><a>HOME</a></li>
+                        <li><a>PROJECTS</a></li>
+                    </ul>
+                 </div>
+                </div>
+            </div>
         </div>
     )
 }
