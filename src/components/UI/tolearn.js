@@ -8,6 +8,7 @@ class Tolearn extends Component {
         super()
         this.state = {
             count : null,
+            study_now : "",
             study_todo : [],
         }
     }
@@ -23,6 +24,20 @@ class Tolearn extends Component {
                 console.log(error);
             })
     }
+
+    onchangeHandler = (e) => {
+        let study_now_data =  e.target.value;
+        this.setState({study_now : study_now_data});
+    }
+
+    submitHandler = (e) => {
+        e.preventDefault();
+        let state_save = this.state;
+        let study_todo_now = [...state_save.study_todo];
+        study_todo_now.push(state_save.study_now);
+        this.setState({study_todo : study_todo_now ,study_now : ''});
+        console.log(this.state.study_todo);
+    }
     
     render(){
         const study_todo = this.state.study_todo;
@@ -33,11 +48,13 @@ class Tolearn extends Component {
                 <div className="row">
                     <div className="col-md-8">
                         <h2>Study Path</h2>
+                        <form onSubmit={this.submitHandler}>
                         <div className="form-group">
                             <label>Add step</label>
-                            <input type="text" className="form-control" />
-                            <button type="button" className="btn btn-sm btn-success mt-2" >Add</button>
+                            <input type="text" className="form-control" onKeyUp={this.onchangeHandler} placeholder={this.state.study_now} />
+                            <button type="submit" className="btn btn-sm btn-success mt-2" >Add</button>
                         </div>
+                        </form>
                         {study_todo.map((todo,k)=> {
                             return (
                                 <div key={k}>{todo}</div>
