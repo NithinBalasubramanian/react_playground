@@ -7,7 +7,7 @@ import Tolearn from './tolearn';
 import { BrowserRouter , Switch , Route} from 'react-router-dom';
 
 function Initial_combine() {
-    
+
     return (
         <div>
             <BrowserRouter>
@@ -22,7 +22,7 @@ function Initial_combine() {
                         <About />
                         <Tolearn />
                     </Route>
-                    <Route path='/project' component={Project} exact />
+                    <Route path='/project' component={Project}  />
                 </Switch>
             </BrowserRouter>
         </div>
