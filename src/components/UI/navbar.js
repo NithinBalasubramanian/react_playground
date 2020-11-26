@@ -20,6 +20,7 @@ function Navbar() {
                     <ul>
                         <li><Link to='/home'>HOME</Link></li>
                         <li><Link to='/project'>PROJECTS</Link></li>
+                        <li><Link to='/dashboard'>DASHBOARD</Link></li>
                     </ul>
                  </div>
                 </div>

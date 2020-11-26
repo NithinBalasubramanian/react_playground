@@ -32,6 +32,7 @@ class Crud_sql extends Component {
     }
 
     render() {
+        const { name , contact , email } = this.state;
         return(
             <div className="container pt-4 pb-4">
                 <div className="row">
@@ -42,6 +43,7 @@ class Crud_sql extends Component {
                             <label>Name :</label>
                             <input type="text" className="form-control" 
                             name="name" 
+                            value={name}
                             onKeyUp={this.changeHandling}
                             placeholder="Enter name" required/>
                         </div>

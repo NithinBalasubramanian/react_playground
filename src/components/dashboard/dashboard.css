@@ -1,0 +1,10 @@
+.sidebar_cont{
+    width:20%;
+    min-height:700px;
+    background-color: black;
+    color:#fff;
+    display:none;
+}
+.active_side{
+    display:block;
+}

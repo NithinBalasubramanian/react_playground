@@ -58,7 +58,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
                     return (
                         <tr>
                             <td>{k+1}</td>
-                            <td>{itm}</td>
+                            <td key={k}>{itm}</td>
                             <td>
                                 <button className="btn btn-sm btn-danger" onClick={ () => { this.remove_this(k) } }>Delete</button>
                             </td>
