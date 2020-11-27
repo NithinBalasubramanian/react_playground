@@ -4,7 +4,7 @@ import Medianav from './medianav';
 import About from './about';
 import Project from './project';
 import Dashboard_main from '../dashboard/dashboard_main';
-import Tolearn from './tolearn';
+//import Tolearn from './tolearn';
 import { BrowserRouter , Switch , Route} from 'react-router-dom';
 
 function Initial_combine() {
@@ -17,13 +17,11 @@ function Initial_combine() {
                         <Navbar />
                         <Medianav />
                         <About />
-                        <Tolearn />
                     </Route>
                     <Route path='/home' exact>
                         <Navbar />
                         <Medianav />
                         <About />
-                        <Tolearn />
                     </Route>
                     <Route path='/project' >
                         <Navbar />

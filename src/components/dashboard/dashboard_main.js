@@ -2,9 +2,10 @@ import React,{ useState } from 'react';
 import logo from '../../assets/logo512.png';
 import '../UI/display.css';
 import './dashboard.css';
-import { Link} from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import Sidebar from './sidebar';
 import Maincont from './maincont';
+import { BrowserRouter as Router} from 'react-router-dom';
 
 function Dashboard_main() {
     const [ display_status , setdisplay_status ] = useState(true);
@@ -28,17 +29,19 @@ function Dashboard_main() {
             <div className="nav_list_outs">
                 <div className="nav_list_outs_data">
                     <ul>
-                        <li><Link to='/home'>HOME</Link></li>
-                        <li><Link to='/project'>PROJECTS</Link></li>
-                        <li><Link to='/dashboard'>DASHBOARD</Link></li>
+                        <li><NavLink to='/home' activeClassName="mainNavActive">HOME</NavLink></li>
+                        <li><NavLink to='/project' activeClassName="mainNavActive">PROJECTS</NavLink></li>
+                        <li><NavLink to='/dashboard' activeClassName="mainNavActive">DASHBOARD</NavLink></li>
                     </ul>
                 </div>
             </div>
             </div>
         </div>
         <div className="flexPart">
-        <Sidebar status={display_status} />
-        <Maincont />
+        <Router>
+            <Sidebar status={display_status} />
+            <Maincont />
+        </Router>
         </div>
         </>
     )

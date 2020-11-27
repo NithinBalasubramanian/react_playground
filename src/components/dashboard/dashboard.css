@@ -12,6 +12,9 @@
     width:95%;
     padding:10px;
 }
+.sidebarList a{
+    text-decoration: none;
+}
 .flexPart{
     display:flex;
     width:100%;
@@ -20,5 +23,56 @@
 .mainContCart{
     width:80%;
     min-height:700px;
-    background-color: blue;
+    background-color: #f2f2f2;
+}
+.mainContCart .headerCart{
+    width:95%;
+    margin:50px auto;
+    height:100px;
+    padding:20px;
+    background-color:#fff;
+    box-shadow:0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important ;
+    border-radius: 10px;
+}
+.mainContCart .headerCart h1{
+    margin:0px;
+    padding:5px;
+}
+.mainContCart .mainCart{
+    width:95%;
+    margin:50px auto;
+    min-height:600px;
+    padding:20px;
+    background-color:#fff;
+    box-shadow:0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important ;
+    border-radius: 10px;
+}
+.navCont{
+    padding:10px;
+    display:flex;
+    width:100%;
+    font-weight:400;
+    letter-spacing: 2px;;
+    color:#fff;
+    height:auto;
+    margin:5px 0px;
+    border-radius:5px;
+}
+.navCont:hover{
+    background-color:#61DAFB;
+    color:black;
+    font-weight:500;
+}
+.navActive{
+    background-color:#61DAFB;
+    color:black;
+    font-weight:500;
+}
+.navCont .navIcon{
+    width:20%;
+    text-align:center;
+}
+.navCont .navMenu{
+    width:80%;
+    padding-left:10px;
 }
