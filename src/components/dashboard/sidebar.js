@@ -1,15 +1,21 @@
 import React from 'react';
+import { IconContext } from 'react-icons';
+import { MdDashboard } from 'react-icons/md';
+import { ImUsers } from 'react-icons/im';
+import { FiUsers } from 'react-icons/fi';
+import { AiOutlineUserSwitch } from 'react-icons/ai';
 import './dashboard.css';
 import { NavLink } from 'react-router-dom';
 
 function Sidebar(props) {
 
     return(
+        <IconContext.Provider value={{color:"#fff",size:"20px"}}>
         <div className={ (props.status) ? 'sidebar_cont active_side' : 'sidebar_cont'}>
             <div className="sidebarList">
                 <NavLink to='/dashboard' exact className="navCont" activeClassName="navActive">
                     <div className="navIcon">
-                        h
+                        <MdDashboard />
                     </div>
                     <div className="navMenu">
                         Dashboard
@@ -17,7 +23,7 @@ function Sidebar(props) {
                 </NavLink>
                 <NavLink to='/dashboard/Customer'  className="navCont" activeClassName="navActive">
                     <div className="navIcon">
-                        h
+                        <ImUsers />
                     </div>
                     <div className="navMenu">
                         Customer
@@ -25,7 +31,7 @@ function Sidebar(props) {
                 </NavLink>
                 <NavLink to='/dashboard/Employee' className="navCont" activeClassName="navActive">
                     <div className="navIcon">
-                        h
+                        <FiUsers />
                     </div>
                     <div className="navMenu">
                         Employee
@@ -33,7 +39,7 @@ function Sidebar(props) {
                 </NavLink>
                 <NavLink to='/dashboard/Supplier' className="navCont" activeClassName="navActive">
                     <div className="navIcon">
-                        h
+                        <AiOutlineUserSwitch />
                     </div>
                     <div className="navMenu">
                         Supplier
@@ -41,6 +47,7 @@ function Sidebar(props) {
                 </NavLink>
             </div>
         </div>
+        </IconContext.Provider>
     )
 }
 

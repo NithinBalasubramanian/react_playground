@@ -18,11 +18,6 @@ function Initial_combine() {
                         <Medianav />
                         <About />
                     </Route>
-                    <Route path='/home' exact>
-                        <Navbar />
-                        <Medianav />
-                        <About />
-                    </Route>
                     <Route path='/project' >
                         <Navbar />
                         <Medianav />

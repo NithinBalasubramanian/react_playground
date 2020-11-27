@@ -6,6 +6,7 @@ import { NavLink} from 'react-router-dom';
 import Sidebar from './sidebar';
 import Maincont from './maincont';
 import { BrowserRouter as Router} from 'react-router-dom';
+import { BiMenuAltLeft } from 'react-icons/bi';
 
 function Dashboard_main() {
     const [ display_status , setdisplay_status ] = useState(true);
@@ -18,12 +19,13 @@ function Dashboard_main() {
         <>
         <div className="nav_main">
             <div className="logo">
+               <BiMenuAltLeft  onClick={sidebarStatusHandler} size="50px" color="#fff" style={{margin:"20px"}}/>
              <div className="logo_img">
-                <img src={logo} onClick={sidebarStatusHandler} width="100%" alt="logo" height="100%" />
+                <img src={logo} width="100%" alt="logo" height="100%" />
              </div>
-             <h6>
-                 Playground Dashboard
-             </h6>
+             <h4>
+                 Dashboard
+             </h4>
             </div>
             <div className="nav_list">
             <div className="nav_list_outs">
