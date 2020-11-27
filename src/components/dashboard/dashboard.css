@@ -76,3 +76,19 @@
     width:80%;
     padding-left:10px;
 }
+.sideButton{
+    padding:8px 10px;
+    text-align:center;
+    background-color:#61DAFB;
+    float:right;
+    cursor:pointer;
+    color:black;
+    text-decoration: none;
+    box-shadow:0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important ;
+    border-radius: 5px;
+}
+.sideButton:hover{
+    color:black;
+    text-decoration: none;
+    cursor:pointer;
+}

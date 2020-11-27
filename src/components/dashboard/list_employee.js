@@ -1,24 +1,24 @@
-import React from 'react'
+import React from 'react';
 import './dashboard.css';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function add_employee() {
+function list_employee() {
     return (
         <>
             <div className="headerCart row">
-                <h1 className="col-md-8">Add Employee</h1>
+                <h1 className="col-md-8">List Employee</h1>
                 <div className="col-md-4">
-                    <Link to="/dashboard/Employee" className="sideButton">
-                        List Employee
+                    <Link to="/dashboard/Employee/AddEmployee" className="sideButton ">
+                        Add Employee
                     </Link>
                 </div>
             </div>
             <div className="mainCart">
-                <h1>Employee Form</h1>
+                <h1>Employee List</h1>
             </div>
         </>
     )
 }
 
-export default add_employee
+export default list_employee;

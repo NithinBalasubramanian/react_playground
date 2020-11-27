@@ -31,7 +31,7 @@ function Dashboard_main() {
             <div className="nav_list_outs">
                 <div className="nav_list_outs_data">
                     <ul>
-                        <li><NavLink to='/home' activeClassName="mainNavActive">HOME</NavLink></li>
+                        <li><NavLink to='/' exact activeClassName="mainNavActive">HOME</NavLink></li>
                         <li><NavLink to='/project' activeClassName="mainNavActive">PROJECTS</NavLink></li>
                         <li><NavLink to='/dashboard' activeClassName="mainNavActive">DASHBOARD</NavLink></li>
                     </ul>

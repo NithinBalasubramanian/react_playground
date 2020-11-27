@@ -10,9 +10,9 @@ function Navbar() {
              <div className="logo_img">
                 <img src={logo} width="100%" alt="logo" height="100%" />
              </div>
-             <h1>
+             <h4>
                  Playground
-             </h1>
+             </h4>
             </div>
             <div className="nav_list">
                 <div className="nav_list_outs">
