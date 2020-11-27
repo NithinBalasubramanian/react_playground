@@ -92,3 +92,12 @@
     text-decoration: none;
     cursor:pointer;
 }
+.formPart{
+    padding:30px 0px;
+}
+.mainCart h1{
+    font-size:35px;
+    font-weight:600;
+    letter-spacing: 2px;
+    color:#61DAFB;
+}
