@@ -36,8 +36,10 @@ function Dashboard_main() {
             </div>
             </div>
         </div>
+        <div className="flexPart">
         <Sidebar status={display_status} />
         <Maincont />
+        </div>
         </>
     )
 }

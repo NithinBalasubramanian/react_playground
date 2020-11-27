@@ -8,3 +8,17 @@
 .active_side{
     display:block;
 }
+.sidebarList{
+    width:95%;
+    padding:10px;
+}
+.flexPart{
+    display:flex;
+    width:100%;
+    height:auto;
+}
+.mainContCart{
+    width:80%;
+    min-height:700px;
+    background-color: blue;
+}

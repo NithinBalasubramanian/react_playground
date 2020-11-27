@@ -3,7 +3,9 @@ import './dashboard.css';
 
 function Maincont() {
     return(
-        <h1>Maincont</h1>
+        <div className="mainContCart">
+            
+        </div>
     )
 }
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import './display.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Todo from '../../container/todo';
