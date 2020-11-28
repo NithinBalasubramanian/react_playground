@@ -2,26 +2,26 @@ import React from 'react';
 import './dashboard.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function addCustomerForm() {
+function addSupplierForm() {
     return (
         <>
             <div className="formPart row">
                 <div className="col-md-12 ">
                     <form className="row">
                         <div className="form-group col-md-6">
-                            <label>Customer Name :* </label>
+                            <label>Supplier Name :* </label>
                             <input type="text" className="form-control"></input>
                         </div>
                         <div className="form-group col-md-6">
-                            <label>Customer Email :* </label>
+                            <label>Supplier Email :* </label>
                             <input type="email" className="form-control"></input>
                         </div>
                         <div className="form-group col-md-6">
-                            <label>Customer Contact :* </label>
+                            <label>Supplier Contact :* </label>
                             <input type="text" className="form-control"></input>
                         </div>
                         <div className="form-group col-md-6">
-                            <label>Customer Secondary Contact : </label>
+                            <label>Supplier Secondary Contact : </label>
                             <input type="text" className="form-control"></input>
                         </div>
                         <div className="form-group col-md-6">
@@ -38,4 +38,4 @@ function addCustomerForm() {
     )
 }
 
-export default addCustomerForm;
+export default addSupplierForm

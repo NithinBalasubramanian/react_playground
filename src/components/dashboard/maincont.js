@@ -5,7 +5,7 @@ import AddCustomer from './add_customer';
 import Employee from './list_employee';
 import AddEmployee from './add_employee';
 import Supplier from './list_supplier';
-import AddSupplier from './add_employee';
+import AddSupplier from './add_supplier';
 import Dashboard from './dashboard';
 import { Switch , Route} from 'react-router-dom';
 

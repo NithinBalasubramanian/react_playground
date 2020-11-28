@@ -86,11 +86,16 @@
     text-decoration: none;
     box-shadow:0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important ;
     border-radius: 5px;
+    border:none;
+    outline:none;
 }
 .sideButton:hover{
     color:black;
     text-decoration: none;
     cursor:pointer;
+}
+.sideButton .submitButton{
+    margin-right:30px;
 }
 .formPart{
     padding:30px 0px;

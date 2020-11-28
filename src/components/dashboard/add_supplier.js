@@ -2,6 +2,7 @@ import React from 'react';
 import './dashboard.css';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AddSupplierForm from './addSupplierForm';
 
 function add_supplier() {
     return (
@@ -16,6 +17,7 @@ function add_supplier() {
             </div>
             <div className="mainCart">
                 <h1>Supplier Form</h1>
+                <AddSupplierForm />
             </div>
         </>
     )

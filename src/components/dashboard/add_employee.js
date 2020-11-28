@@ -2,6 +2,7 @@ import React from 'react'
 import './dashboard.css';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AddEmployeeForm from './addEmployeeForm';
 
 function add_employee() {
     return (
@@ -16,6 +17,7 @@ function add_employee() {
             </div>
             <div className="mainCart">
                 <h1>Employee Form</h1>
+                <AddEmployeeForm />
             </div>
         </>
     )
