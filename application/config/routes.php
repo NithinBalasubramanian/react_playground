@@ -49,21 +49,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'admin';
+$route['default_controller'] = 'Api';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-
-$route['Insert/(:any)/(:any)/(:any)/(:any)'] = 'Admin/Insert/$1/$2/$3/$4';
-$route['Sales/(:any)/(:any)/(:any)/(:any)'] = 'Admin/sales/$1/$2/$3/$4';
-$route['Sales_update/(:any)/(:any)/(:any)/(:any)'] = 'Admin/sales_update/$1/$2/$3/$4';
-$route['Damage/(:any)/(:any)/(:any)/(:any)'] = 'Admin/damage/$1/$2/$3/$4';
-$route['Con_sales/(:any)/(:any)/(:any)/(:any)'] = 'Admin/con_sales/$1/$2/$3/$4';
-$route['Purchase/(:any)/(:any)/(:any)/(:any)'] = 'Admin/purchase/$1/$2/$3/$4';
-$route['Insert_app_bill/(:any)/(:any)/(:any)/(:any)'] = 'Admin/Insert_app_bill/$1/$2/$3/$4';
-$route['Service_Insert/(:any)/(:any)/(:any)/(:any)'] = 'Admin/Service_Insert/$1/$2/$3/$4';
-$route['View/(:any)/(:any)'] = 'Admin/View/$1/$2';
-$route['View/(:any)/(:any)/(:any)'] = 'Admin/View/$1/$2/$3';
-$route['View/(:any)/(:any)/(:any)/(:any)'] = 'Admin/View/$1/$2/$3/$4';
-$route['View1/(:any)/(:any)'] = 'Admin/View1/$1/$2';
-$route['View1/(:any)/(:any)/(:any)'] = 'Admin/View1/$1/$2/$3';
-$route['Login/(:any)']='Admin/Login/$1';
