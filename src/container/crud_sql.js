@@ -26,7 +26,7 @@ class Crud_sql extends Component {
             contact : this.state.contact,
             email : this.state.email,
         }
-        axios.post("http://localhost/pingifbulk/Api/react_post",data)
+        axios.post("http://localhost/react_play/Api/insert/customer",data)
         .then(response => { console.log(response) })
         .catch(error => { console.log(error) })
     }
