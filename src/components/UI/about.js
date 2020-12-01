@@ -21,6 +21,16 @@ function About() {
                             <li>Axios data fetching using API</li>
                             <li>Axios POST to mysql using PHP Backend</li>
                             <li>Dashboard Designing</li>
+                            <li>React icon</li>
+                            <li>Nav link functionalities</li>
+                        </ul>
+                        <h3>Dashboard</h3>
+                        <ul>
+                            <li>Sidebar design and functinality</li>
+                            <li>Navlink and active process</li>
+                            <li>Multiple Routing</li>
+                            <li>icon setup and context functionality</li>
+                            <li>Backend setup codeigniter for rest Api and Mysql DB</li>
                         </ul>
                     </div>
                     <div className="col-md-4">
