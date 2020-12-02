@@ -41,6 +41,12 @@ class Api extends CI_Controller{
         }
         $insert = $this->Admin_model->create($tablename,$data);
     }
+
+    public function fetch_data($tablename)
+    {
+        $data = $this->Admin_model->table_column($tablename);
+        echo json_encode($data);
+    }
     
 }
 ?>
