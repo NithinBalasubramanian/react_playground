@@ -16,4 +16,6 @@
 - Sidebar design and functinality
 - Navlink and active process
 - Multiple Routing
- -icon setup and context functionality
+- icon setup and context functionality
+- Form setup
+- form validation 
