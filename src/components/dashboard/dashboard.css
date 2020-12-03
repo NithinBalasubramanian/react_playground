@@ -106,3 +106,7 @@
     letter-spacing: 2px;
     color:#61DAFB;
 }
+.is-invalid{
+    border:2px solid red;
+}
+
