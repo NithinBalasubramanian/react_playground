@@ -37,7 +37,7 @@ function addCustomerForm() {
                         </div>
                         <div className="form-group col-md-6">
                             <label>Address : </label>
-                            <textarea type="text" rows="5" className="form-control" name="address"></textarea>
+                            <textarea type="text" rows="6" className="form-control" name="address"></textarea>
                         </div>
                         <div className="col-md-12">
                             <button type="submit" className="sideButton submitButton">Submit</button>
