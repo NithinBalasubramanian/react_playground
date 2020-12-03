@@ -73,9 +73,8 @@ class AddCustomerForm extends Component {
                     </div>
                 </div>
             </>
-        )
+            )
+        }
     }
-    
-}
 
 export default AddCustomerForm;
