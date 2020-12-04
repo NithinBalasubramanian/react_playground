@@ -34,8 +34,9 @@ function AddEmployeeForm() {
     const onChangeHandler = (e) => {
 
         let nowValue = e.target.value;
+        let nowName = e.target.name;
         seteData({ [e.target.name] : nowValue });
-        verification(e.target.name , nowValue);
+        verification(nowName , nowValue);
     }
 
     const verification = (name , value) => {
