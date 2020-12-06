@@ -8,7 +8,7 @@ function ListCustomerData() {
     const [ datas , setdatas ] = useState([]);
 
     useEffect(() => {
-        axios.get('fetch_data/customer')
+        axios.get('fetch_data/employee')
             .then(res => {
                 setdatas(res.data)
             })
@@ -37,10 +37,10 @@ function ListCustomerData() {
                     return ( 
                     <tr>
                         <td>{ k+1 }</td>
-                        <td>{ itm.c_name }</td>
-                        <td>{ itm.c_contact }</td>
-                        <td>{ itm.c_email }</td>
-                        <td>{ itm.c_sec_contact }</td>
+                        <td>{ itm.e_name }</td>
+                        <td>{ itm.e_contact }</td>
+                        <td>{ itm.e_email }</td>
+                        <td>{ itm.e_sec_contact }</td>
                         <td>{ itm.address }</td>
                         <td></td>
                     </tr>

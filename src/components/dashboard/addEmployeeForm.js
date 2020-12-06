@@ -1,7 +1,7 @@
 import React , { useState } from 'react';
 import './dashboard.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
+import axios from '../../config/instance';
 
 function AddEmployeeForm() {
     
@@ -10,6 +10,7 @@ function AddEmployeeForm() {
         e_email : '',
         e_contact : '',
         e_sec_contact : '',
+        status : 1,
         address : '',
         nameError : '',
         emailError : '',
@@ -23,6 +24,7 @@ function AddEmployeeForm() {
         e_email : '',
         e_contact : '',
         e_sec_contact : '',
+        status : 1,
         address : '',
         nameError : '',
         emailError : '',
@@ -115,12 +117,10 @@ function AddEmployeeForm() {
 
     const formSubmitHandler = (e) => {
         e.preventDefault();
-        // let data = {
-        //     id : 12
-        // }
-        // axios.post("http://localhost/react_play/Api/insert/employee",data)
-        // .then(response => { console.log(response) })
-        // .catch(error => { console.log(error) })
+        let data = state;
+        axios.post("insert/employee",data)
+        .then(response => { console.log(response) })
+        .catch(error => { console.log(error) })
         setState( initialState );
     }
 

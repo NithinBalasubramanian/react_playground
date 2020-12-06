@@ -2,6 +2,7 @@ import React from 'react';
 import './dashboard.css';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ListEmployee from './listEmployeeData';
 
 function list_employee() {
     return (
@@ -16,6 +17,7 @@ function list_employee() {
             </div>
             <div className="mainCart">
                 <h1>Employee List</h1>
+                <ListEmployee />
             </div>
         </>
     )

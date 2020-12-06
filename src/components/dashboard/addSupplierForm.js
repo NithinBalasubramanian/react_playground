@@ -1,7 +1,7 @@
 import React , { useState } from 'react';
 import './dashboard.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
+import axios from '../../config/instance';
 
 function AddSupplierForm() {
 
@@ -11,6 +11,7 @@ function AddSupplierForm() {
         s_contact : '',
         s_sec_contact : '',
         address : '',
+        status : 1,
         nameError : '',
         emailError : '',
         contactError : '',
@@ -24,6 +25,7 @@ function AddSupplierForm() {
         s_contact : '',
         s_sec_contact : '',
         address : '',
+        status : 1,
         nameError : '',
         emailError : '',
         contactError : '',
@@ -115,12 +117,10 @@ function AddSupplierForm() {
 
     const formSubmitHandler = (e) => {
         e.preventDefault();
-        // let data = {
-        //     id : 12
-        // }
-        // axios.post("http://localhost/react_play/Api/insert/supplier",data)
-        // .then(response => { console.log(response) })
-        // .catch(error => { console.log(error) })
+        let data = state;
+        axios.post("insert/supplier",data)
+        .then(response => { console.log(response) })
+        .catch(error => { console.log(error) })
         setState( initialState );
     }
 
