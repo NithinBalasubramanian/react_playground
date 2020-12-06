@@ -45,7 +45,7 @@ class Api extends CI_Controller{
 
     public function fetch_data($tablename)
     {
-        $data = $this->Admin_model->table_column($tablename);
+        $data = $this->Admin_model->table_column($tablename,'status','1');
         echo json_encode($data);
     }
     
