@@ -23,19 +23,20 @@ class Api extends CI_Controller{
 		$this->Api_model->create('react_customer',$data);
     }
     public function insert($tablename){
-        echo $tablename; exit;
         $post_got = file_get_contents("php://input");
-		$data_got = json_decode($post_got);
+        $data_got = json_decode($post_got);
         $columns = $this->Admin_model->table($tablename);
+        $data = array();
         for($i=0;$i<count($columns);$i++)
         {
             if($columns[$i]!="id")
             {
-               if($columns[$i]=="date_created") {
+               if($columns[$i]=="date") {
                     $date = date('Y-m-d');
                     $data[$columns[$i]] = $date;
                 } else {
-                    $data[$columns[$i]] = $data_got->$columns[$i];
+                    $fetch = $columns[$i];
+                    $data[$columns[$i]] = $data_got->$fetch;
                 }
             }
         }
