@@ -18,7 +18,7 @@ function AddEmployeeForm() {
         disable : false,
     };
 
-    const [ eData , seteData] = useState({ 
+    const [ state , setState] = useState({ 
         e_name : '',
         e_email : '',
         e_contact : '',
@@ -35,36 +35,62 @@ function AddEmployeeForm() {
 
         let nowValue = e.target.value;
         let nowName = e.target.name;
-        seteData({ [e.target.name] : nowValue });
+        setState(prevstate => { 
+            return {...prevstate , [e.target.name] : nowValue }
+        });
         verification(nowName , nowValue);
     }
 
     const verification = (name , value) => {
         if(name === 'e_name'){
             if(value.length < 8){
-                seteData({ nameError : '( Name strength must be above 8 )'});
-                seteData({ disable : true });
+                setState( prevstate => {
+                    return { ...prevstate , nameError : '( Name strength must be above 8 )'}
+                });
+                setState( prevstate => {
+                    return { ...prevstate , disable : true }
+                });
             }else{
-                seteData({nameError : '' });
-                seteData({ disable : false });
+                setState( prevstate => {
+                    return { ...prevstate , nameError : ''}
+                });
+                setState( prevstate => {
+                    return { ...prevstate , disable : false }
+                });
             }
         }
         if(name === 'e_contact'){
             if(value.length !== 10){
-                seteData({ contactError : '( Contact Number is invalid ) ' });
-                seteData({ disable : true });
+                setState( prevstate => {
+                    return { ...prevstate , contactError : '( Contact Number is invalid )' }
+                });
+                setState( prevstate => {
+                    return { ...prevstate , disable : true }
+                });
             }else{
-                seteData({contactError : '' });
-                seteData({ disable : false });
+                setState( prevstate => {
+                    return { ...prevstate , contactError : ''}
+                });
+                setState( prevstate => {
+                    return { ...prevstate , disable : false }
+                });
             }
         }
         if(name === 'e_sec_contact'){
             if(value.length !== 10){
-                seteData({ seccontactError : '( Contact Number is invalid ) ' });
-                seteData({ disable : true });
+                setState( prevstate => {
+                    return { ...prevstate , seccontactError : '( Contact Number is invalid )' }
+                });
+                setState( prevstate => {
+                    return { ...prevstate , disable : true }
+                });
             }else{
-                seteData({seccontactError : '' });
-                seteData({ disable : false });
+                setState( prevstate => {
+                    return { ...prevstate , seccontactError : ''}
+                });
+                setState( prevstate => {
+                    return { ...prevstate , disable : false }
+                });
             }
         }
     }
@@ -77,7 +103,7 @@ function AddEmployeeForm() {
         // axios.post("http://localhost/react_play/Api/insert/employee",data)
         // .then(response => { console.log(response) })
         // .catch(error => { console.log(error) })
-        seteData( initialState );
+        setState( initialState );
     }
 
     return (
@@ -86,34 +112,36 @@ function AddEmployeeForm() {
             <div className="col-md-12 ">
                 <form className="row" onSubmit = { formSubmitHandler }>
                     <div className="form-group col-md-6">
-                        <label>Employee Name :* </label><span><small style= {{ color:'red',padding:'opx 10px' }}>{ eData.nameError }</small></span>
+                        <label>Employee Name :* </label><span><small style= {{ color:'red',padding:'opx 10px' }}>{ state.nameError }</small></span>
                         <input type="text" 
-                        className={ (eData.nameError !== '') ? `form-control is-invalid` : ` form-control` }  
-                        value={ eData.e_name } 
+                        className={ (state.nameError !== '') ? `form-control is-invalid` : ` form-control` }  
+                        value={ state.e_name } 
                         onChange={ onChangeHandler } 
                         name="e_name"></input>
                     </div>
                     <div className="form-group col-md-6">
-                        <label>Employee Email :* </label><span><small style= {{ color:'red',padding:'opx 10px' }}>{ eData.emailError }</small></span>
+                        <label>Employee Email :* </label><span><small style= {{ color:'red',padding:'opx 10px' }}>{ state.emailError }</small></span>
                         <input type="email" 
-                        className={ (eData.emailError !== '') ? `form-control is-invalid` : ` form-control` }  
-                        value={ eData.e_email } 
+                        className={ (state.emailError !== '') ? `form-control is-invalid` : ` form-control` }  
+                        value={ state.e_email } 
                         onChange={ onChangeHandler } 
                         name="e_email"></input>
                     </div>
                     <div className="form-group col-md-6">
-                        <label>Employee Contact :* </label><span><small style= {{ color:'red',padding:'opx 10px' }}>{ eData.contactError }</small></span>
+                        <label>Employee Contact :* </label><span><small style= {{ color:'red',padding:'opx 10px' }}>{ state.contactError }</small></span>
                         <input type="text" 
-                        className={ (eData.contactError !== '') ? `form-control is-invalid` : ` form-control` }  
-                        value={ eData.e_contact } 
+                        className={ (state.contactError !== '') ? `form-control is-invalid` : ` form-control` }  
+                        value={ state.e_contact } 
                         onChange={ onChangeHandler } 
                         name="e_contact"></input>
                     </div>
                     <div className="form-group col-md-6">
-                        <label>Employee Secondary Contact : </label><span><small style= {{ color:'red',padding:'opx 10px' }}>{ eData.secContactError }</small></span>
+                        <label>Employee Secondary Contact : </label><span><small style= {{ color:'red',padding:'opx 10px' }}>{ state.seccontactError }</small></span>
                         <input type="text" 
-                        className={ (eData.secContactError !== '') ? `form-control is-invalid` : ` form-control` }  
-                        name="e_sec_cont"></input>
+                        className={ (state.seccontactError !== '') ? `form-control is-invalid` : ` form-control` }  
+                        value={ state.e_sec_contact } 
+                        onChange={ onChangeHandler } 
+                        name="e_sec_contact"></input>
                     </div>
                     <div className="form-group col-md-6">
                         <label>Address : </label>
@@ -124,7 +152,7 @@ function AddEmployeeForm() {
                     </div>
                     <div className="col-md-12">
                         <button type="submit" 
-                        className="sideButton submitButton" disabled = { eData.disable }>Submit</button>
+                        className="sideButton submitButton" disabled = { state.disable }>Submit</button>
                     </div>
                 </form>
             </div>
