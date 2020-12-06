@@ -1,7 +1,7 @@
 import React , { Component } from 'react';
 import './dashboard.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
+import axios from '../../config/instance';
 
 const initialState = {
     c_name : '',
@@ -9,6 +9,7 @@ const initialState = {
     c_contact : '',
     c_sec_contact : '',
     address : '',
+    status : 1,
     nameError : '',
     emailError : '',
     contactError : '',
@@ -24,6 +25,7 @@ class AddCustomerForm extends Component {
             c_email : '',
             c_contact : '',
             c_sec_contact : '',
+            status : 1,
             address : '',
             nameError : '',
             emailError : '',
@@ -33,15 +35,13 @@ class AddCustomerForm extends Component {
         }
     }
 
-    formSubmitHandler = (e) => {
+    formSubmitHandler = async (e) => {
         e.preventDefault();
-        let data = {
-            id : 12
-        }
-        this.setState( initialState );
-        axios.post("http://localhost/react_play/Api/insert/customer",data)
+        let data = this.state;
+        axios.post("insert/customer",data)
         .then(response => { console.log(response) })
         .catch(error => { console.log(error) })
+        this.setState( initialState );
     }
 
     verification = (name , value) => {
