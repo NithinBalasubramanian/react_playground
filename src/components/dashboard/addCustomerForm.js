@@ -72,6 +72,16 @@ class AddCustomerForm extends Component {
                 this.setState({ disable : false });
             }
         }
+        if(name === 'c_email'){
+            let regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if(!regEmail.test(value)){
+                this.setState({ emailError : '( Invalid Email ID )' });
+                this.setState({ disable : true });
+            }else{
+                this.setState({ emailError : '' });
+                this.setState({ disable : false });
+            }
+        }
     }
 
     enterDataHandler = (e) => {

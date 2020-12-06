@@ -93,6 +93,24 @@ function AddEmployeeForm() {
                 });
             }
         }
+        if(name === 'e_email'){
+            let regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if(!regEmail.test(value)){
+                setState( prevstate => {
+                    return { ...prevstate , emailError : '( Invalid Email ID )' }
+                });
+                setState( prevstate => {
+                    return { ...prevstate , disable : true }
+                });
+            }else{
+                setState( prevstate => {
+                    return { ...prevstate , emailError : '' }
+                });
+                setState( prevstate => {
+                    return { ...prevstate , disable : false }
+                });
+            }
+        }
     }
 
     const formSubmitHandler = (e) => {

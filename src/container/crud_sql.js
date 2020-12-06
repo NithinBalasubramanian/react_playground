@@ -44,7 +44,7 @@ class Crud_sql extends Component {
                             <input type="text" className="form-control" 
                             name="name" 
                             value={name}
-                            onKeyUp={this.changeHandling}
+                            onChange={this.changeHandling}
                             placeholder="Enter name" required/>
                         </div>
                         <div className="form-group">
@@ -52,7 +52,7 @@ class Crud_sql extends Component {
                             <input type="text" className="form-control" 
                             name="contact" 
                             maxLength="10"
-                            onKeyUp={this.changeHandling}
+                            onChange={this.changeHandling}
                             placeholder="Enter contact" required/>
                         </div>
                         <div className="form-group">
@@ -60,7 +60,7 @@ class Crud_sql extends Component {
                             <input type="email"
                              className="form-control" 
                              name="email"
-                            onKeyUp={this.changeHandling}
+                            onChange={this.changeHandling}
                             placeholder="Enter email" required/>
                         </div>
                         <button type="submit" className="btn btn-sm btn-info" disabled={this.state.submit_state} 
