@@ -25,22 +25,24 @@ class Api extends CI_Controller{
     public function insert($tablename){
         $post_got = file_get_contents("php://input");
         $data_got = json_decode($post_got);
-        $columns = $this->Admin_model->table($tablename);
-        $data = array();
-        for($i=0;$i<count($columns);$i++)
-        {
-            if($columns[$i]!="id")
+        if($data_got->status != ''){
+            $columns = $this->Admin_model->table($tablename);
+            $data = array();
+            for($i=0;$i<count($columns);$i++)
             {
-               if($columns[$i]=="date") {
-                    $date = date('Y-m-d');
-                    $data[$columns[$i]] = $date;
-                } else {
-                    $fetch = $columns[$i];
-                    $data[$columns[$i]] = $data_got->$fetch;
+                if($columns[$i]!="id")
+                {
+                if($columns[$i]=="date") {
+                        $date = date('Y-m-d');
+                        $data[$columns[$i]] = $date;
+                    } else {
+                        $fetch = $columns[$i];
+                        $data[$columns[$i]] = $data_got->$fetch;
+                    }
                 }
             }
+            $insert = $this->Admin_model->create($tablename,$data);
         }
-        $insert = $this->Admin_model->create($tablename,$data);
     }
 
     public function fetch_data($tablename)
