@@ -2,6 +2,7 @@ import React from 'react';
 import './dashboard.css';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AddProductForm from './addProductForm';
 
 function add_product() {
     return (
@@ -16,7 +17,7 @@ function add_product() {
             </div>
             <div className="mainCart">
                 <h1>Product Form</h1>
-                
+                <AddProductForm />
             </div>
         </>
     )

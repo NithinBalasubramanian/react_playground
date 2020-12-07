@@ -166,7 +166,9 @@ function AddSupplierForm() {
                             <textarea type="text" 
                             rows="5" 
                             className="form-control" 
-                            name="s_address"></textarea>
+                            name="address"
+                            onChange={ onChangeHandler } 
+                            value={ state.address }></textarea>
                         </div>
                         <div className="col-md-12">
                             <button type="submit" className="sideButton submitButton">Submit</button>

@@ -5,8 +5,7 @@ import axios from '../../config/instance';
 
 function AddProductForm() {
 
-    const initialState = { 
-        category_id : '',
+    const initialState = {
         product_name : '',
         status : 1,
         categoryError : '',
@@ -15,7 +14,6 @@ function AddProductForm() {
     };
 
     const [ state , setState] = useState({ 
-        category_id : '',
         product_name : '',
         status : 1,
         categoryError : '',
@@ -34,7 +32,7 @@ function AddProductForm() {
     }
 
     const verification = (name , value) => {
-        if(name === 'product'){
+        if(name === 'product_name'){
             if(value.length < 4){
                 setState( prevstate => {
                     return { ...prevstate , productError : '( Name strength must be above 8 )'}
@@ -50,7 +48,7 @@ function AddProductForm() {
     const formSubmitHandler = (e) => {
         e.preventDefault();
         let data = state;
-        axios.post("insert/product",data)
+        axios.post("insert/products",data)
         .then(response => { console.log(response) })
         .catch(error => { console.log(error) })
         setState( initialState );

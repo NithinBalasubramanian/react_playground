@@ -144,7 +144,9 @@ function AddEmployeeForm() {
                         <textarea type="text" 
                         rows="5" 
                         className="form-control" 
-                        name="address" vlaue={ state.address }></textarea>
+                        onChange={ onChangeHandler } 
+                        name="address" 
+                        vlaue={ state.address }></textarea>
                     </div>
                     <div className="col-md-12">
                         <button type="submit" 

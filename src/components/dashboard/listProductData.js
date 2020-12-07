@@ -13,25 +13,25 @@ function ListProductData() {
     },[])
 
     const fetchAll = () => {
-        // axios.get('fetch_data/employee')
-        // .then(res => {
-        //     setdatas(res.data)
-        // })
-        // .catch( error => {
-        //     console.log(error);
-        // })
+        axios.get('fetch_data/products')
+        .then(res => {
+            setdatas(res.data)
+        })
+        .catch( error => {
+            console.log(error);
+        })
     }
 
     const onActionClick = (delId) => {
-        // if(window.confirm('Are you sure ?')){
-        //     axios.get('del_data/employee/'+delId)
-        //     .then(res => {
-        //         fetchAll();
-        //     })
-        //     .catch( error => {
-        //         console.log(error);
-        //     })
-        // }
+        if(window.confirm('Are you sure ?')){
+            axios.get('del_data/products/'+delId)
+            .then(res => {
+                fetchAll();
+            })
+            .catch( error => {
+                console.log(error);
+            })
+        }
     }
 
     return (
@@ -41,18 +41,21 @@ function ListProductData() {
             <thead style={{'backgroundColor':'#61DAFB'}} >
                 <tr>
                     <th>S.No</th>
-                    <th>Category</th>
                     <th>Product</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
+                {datas.map((itm, k) => { 
+                    let id = itm.id;
+                    return(
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button type="button" onClick = {() => { onActionClick() }} className="btn btn-danger btn-sm" >Delete</button></td>
+                        <td>{ k+1 }</td>
+                        <td>{ itm.product_name }</td>
+                        <td><button type="button" onClick = {() => { onActionClick(id) }} className="btn btn-danger btn-sm" >Delete</button></td>
                     </tr>
+                    )
+                })}
             </tbody>
            </table> 
         </div>
