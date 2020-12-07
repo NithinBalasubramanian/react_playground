@@ -6,6 +6,8 @@ import Employee from './list_employee';
 import AddEmployee from './add_employee';
 import Supplier from './list_supplier';
 import AddSupplier from './add_supplier';
+import AddProduct from './add_product';
+import Product from './list_product';
 import Dashboard from './dashboard';
 import { Switch , Route} from 'react-router-dom';
 
@@ -33,6 +35,12 @@ function Maincont() {
             </Route>
             <Route path="/dashboard/Supplier/AddSupplier" >
                 <AddSupplier />
+            </Route>
+            <Route path="/dashboard/Product" exact>
+                <Product />
+            </Route>
+            <Route path="/dashboard/Product/AddProduct" >
+                <AddProduct />
             </Route>
         </Switch>
         </div>

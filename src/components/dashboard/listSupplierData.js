@@ -8,6 +8,10 @@ function ListCustomerData() {
     const [ datas , setdatas ] = useState([]);
 
     useEffect(() => {
+        fetchAll();
+    },[])
+
+    const fetchAll = () => {
         axios.get('fetch_data/supplier')
             .then(res => {
                 setdatas(res.data)
@@ -15,7 +19,19 @@ function ListCustomerData() {
             .catch( error => {
                 console.log(error);
             })
-    },[])
+    }
+
+    const onActionClick = (delId) => {
+        if(window.confirm('Are you sure ?')){
+            axios.get('del_data/supplier/'+delId)
+            .then(res => {
+                fetchAll();
+            })
+            .catch( error => {
+                console.log(error);
+            })
+        }
+    }
 
     return (
         <>
@@ -34,6 +50,7 @@ function ListCustomerData() {
             </thead>
             <tbody>
                 { datas.map((itm,k) => {
+                    let id = itm.id;
                     return ( 
                     <tr>
                         <td>{ k+1 }</td>
@@ -42,7 +59,7 @@ function ListCustomerData() {
                         <td>{ itm.s_email }</td>
                         <td>{ itm.s_sec_contact }</td>
                         <td>{ itm.address }</td>
-                        <td></td>
+                        <td><button type="button" onClick = {() => { onActionClick(id) }} className="btn btn-danger btn-sm" key={k}>Delete</button></td>
                     </tr>
                     )
                 }) }

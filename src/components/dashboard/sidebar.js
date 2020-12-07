@@ -4,6 +4,7 @@ import { MdDashboard } from 'react-icons/md';
 import { ImUsers } from 'react-icons/im';
 import { FiUsers } from 'react-icons/fi';
 import { AiOutlineUserSwitch } from 'react-icons/ai';
+import { GrProductHunt } from 'react-icons/gr';
 import './dashboard.css';
 import { NavLink } from 'react-router-dom';
 
@@ -43,6 +44,14 @@ function Sidebar(props) {
                     </div>
                     <div className="navMenu">
                         Supplier
+                    </div>
+                </NavLink>
+                <NavLink to='/dashboard/Product' className="navCont" activeClassName="navActive">
+                    <div className="navIcon">
+                        <GrProductHunt />
+                    </div>
+                    <div className="navMenu">
+                        Product
                     </div>
                 </NavLink>
             </div>

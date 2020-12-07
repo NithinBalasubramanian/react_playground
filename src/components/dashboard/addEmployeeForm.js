@@ -16,7 +16,7 @@ function AddEmployeeForm() {
         emailError : '',
         contactError : '',
         seccontactError : '',
-        disable : false,
+        disable : true,
     };
 
     const [ state , setState] = useState({ 
@@ -30,7 +30,7 @@ function AddEmployeeForm() {
         emailError : '',
         contactError : '',
         seccontactError : '',
-        disable : false,
+        disable : true,
     });
 
     const onChangeHandler = (e) => {
@@ -49,15 +49,9 @@ function AddEmployeeForm() {
                 setState( prevstate => {
                     return { ...prevstate , nameError : '( Name strength must be above 8 )'}
                 });
-                setState( prevstate => {
-                    return { ...prevstate , disable : true }
-                });
             }else{
                 setState( prevstate => {
                     return { ...prevstate , nameError : ''}
-                });
-                setState( prevstate => {
-                    return { ...prevstate , disable : false }
                 });
             }
         }
@@ -66,15 +60,9 @@ function AddEmployeeForm() {
                 setState( prevstate => {
                     return { ...prevstate , contactError : '( Contact Number is invalid )' }
                 });
-                setState( prevstate => {
-                    return { ...prevstate , disable : true }
-                });
             }else{
                 setState( prevstate => {
                     return { ...prevstate , contactError : ''}
-                });
-                setState( prevstate => {
-                    return { ...prevstate , disable : false }
                 });
             }
         }
@@ -83,15 +71,9 @@ function AddEmployeeForm() {
                 setState( prevstate => {
                     return { ...prevstate , seccontactError : '( Contact Number is invalid )' }
                 });
-                setState( prevstate => {
-                    return { ...prevstate , disable : true }
-                });
             }else{
                 setState( prevstate => {
                     return { ...prevstate , seccontactError : ''}
-                });
-                setState( prevstate => {
-                    return { ...prevstate , disable : false }
                 });
             }
         }
@@ -101,15 +83,9 @@ function AddEmployeeForm() {
                 setState( prevstate => {
                     return { ...prevstate , emailError : '( Invalid Email ID )' }
                 });
-                setState( prevstate => {
-                    return { ...prevstate , disable : true }
-                });
             }else{
                 setState( prevstate => {
                     return { ...prevstate , emailError : '' }
-                });
-                setState( prevstate => {
-                    return { ...prevstate , disable : false }
                 });
             }
         }
@@ -117,11 +93,13 @@ function AddEmployeeForm() {
 
     const formSubmitHandler = (e) => {
         e.preventDefault();
-        let data = state;
-        axios.post("insert/employee",data)
-        .then(response => { console.log(response) })
-        .catch(error => { console.log(error) })
-        setState( initialState );
+        if(state.nameError === '' && state.emailError === '' && state.contactError === ''){
+            let data = state;
+            axios.post("insert/employee",data)
+            .then(response => { console.log(response) })
+            .catch(error => { console.log(error) })
+            setState( initialState );
+        }
     }
 
     return (
@@ -166,7 +144,7 @@ function AddEmployeeForm() {
                         <textarea type="text" 
                         rows="5" 
                         className="form-control" 
-                        name="address"></textarea>
+                        name="address" vlaue={ state.address }></textarea>
                     </div>
                     <div className="col-md-12">
                         <button type="submit" 
