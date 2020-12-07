@@ -49,5 +49,11 @@ class Api extends CI_Controller{
         echo json_encode($data);
     }
     
+    public function del_data($tablename,$del_id)
+    {
+        $this->Admin_model->delete_row($tablename,$del_id);
+        // $data = $this->Admin_model->table_column($tablename);
+        // echo json_encode($data);
+    }
 }
 ?>
