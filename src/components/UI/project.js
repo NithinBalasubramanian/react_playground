@@ -2,7 +2,9 @@ import React from 'react';
 import './display.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Todo from '../../container/todo';
-import Crud_sql from '../../container/crud_sql';
+import Crudsql from '../../container/crud_sql';
+import Mailer from '../../container/mailer';
+
 import { BrowserRouter as Router , Link , Switch , Route} from 'react-router-dom';
 
 function Project() {
@@ -16,6 +18,7 @@ function Project() {
                         <ul>
                             <li><Link to="/project/project_todo">Todo Funtionality</Link></li>
                             <li><Link to="/project/project_crud">CRUD Funtionality mysql</Link></li>
+                            <li><Link to="/project/project_mailer">Mailer</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -25,7 +28,10 @@ function Project() {
                         <Todo />
                     </Route>
                     <Route path="/project/project_crud">
-                        <Crud_sql />
+                        <Crudsql />
+                    </Route>
+                    <Route path="/project/project_mailer">
+                        <Mailer />
                     </Route>
                 </Switch>
                 </div>
