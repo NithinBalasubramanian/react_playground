@@ -7,17 +7,21 @@ function AddProductForm() {
 
     const initialState = {
         product_name : '',
+        product_rate : '',
         status : 1,
         categoryError : '',
         productError : '',
+        productRateError : '',
         disable : false,
     };
 
     const [ state , setState] = useState({ 
         product_name : '',
+        product_rate : '',
         status : 1,
         categoryError : '',
         productError : '',
+        productRateError : '',
         disable : false,
     });
 
@@ -43,15 +47,28 @@ function AddProductForm() {
                 });
             }
         }
+        if(name === 'product_rate'){
+            if(value.length === 0){
+                setState( prevstate => {
+                    return { ...prevstate , productRateError : '( Rate must not be null )'}
+                });
+            }else{
+                setState( prevstate => {
+                    return { ...prevstate , productRateError : ''}
+                });
+            }
+        }
     }
 
     const formSubmitHandler = (e) => {
         e.preventDefault();
-        let data = state;
-        axios.post("insert/products",data)
-        .then(response => { console.log(response) })
-        .catch(error => { console.log(error) })
-        setState( initialState );
+        if(state.productRateError === '' &&  state.productError === ''){
+            let data = state;
+            axios.post("insert/products",data)
+            .then(response => { console.log(response) })
+            .catch(error => { console.log(error) })
+            setState( initialState );
+        }
     }
 
     return (
@@ -66,6 +83,14 @@ function AddProductForm() {
                             value={ state.product_name } 
                             onChange={ onChangeHandler } 
                              name="product_name"></input>
+                        </div>
+                        <div className="form-group col-md-6">
+                            <label>Product Rate :* </label><span><small style= {{ color:'red',padding:'opx 10px' }}>{ state.productRateError }</small></span>
+                            <input type="text" 
+                            className={ (state.productRateError !== '') ? `form-control is-invalid` : ` form-control` }  
+                            value={ state.product_rate } 
+                            onChange={ onChangeHandler } 
+                             name="product_rate"></input>
                         </div>
                         <div className="col-md-12">
                             <button type="submit" className="sideButton submitButton">Submit</button>

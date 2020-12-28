@@ -42,6 +42,7 @@ function ListProductData() {
                 <tr>
                     <th>S.No</th>
                     <th>Product</th>
+                    <th>Rate</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -52,6 +53,7 @@ function ListProductData() {
                     <tr>
                         <td>{ k+1 }</td>
                         <td>{ itm.product_name }</td>
+                        <td>{ itm.product_rate }</td>
                         <td><button type="button" onClick = {() => { onActionClick(id) }} className="btn btn-danger btn-sm" >Delete</button></td>
                     </tr>
                     )
