@@ -9,6 +9,7 @@ import AddSupplier from './add_supplier';
 import AddProduct from './add_product';
 import Product from './list_product';
 import Dashboard from './dashboard';
+import Invoice from './add_invoice';
 import { Switch , Route} from 'react-router-dom';
 
 function Maincont() {
@@ -41,6 +42,9 @@ function Maincont() {
             </Route>
             <Route path="/dashboard/Product/AddProduct" >
                 <AddProduct />
+            </Route>
+            <Route path="/dashboard/Invoice" >
+                <Invoice />
             </Route>
         </Switch>
         </div>

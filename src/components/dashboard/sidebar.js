@@ -54,6 +54,14 @@ function Sidebar(props) {
                         Product
                     </div>
                 </NavLink>
+                <NavLink to='/dashboard/Invoice' className="navCont" activeClassName="navActive">
+                    <div className="navIcon">
+                        <GrProductHunt />
+                    </div>
+                    <div className="navMenu">
+                        Invoice
+                    </div>
+                </NavLink>
             </div>
         </div>
         </IconContext.Provider>
